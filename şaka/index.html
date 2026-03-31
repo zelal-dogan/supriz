@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sürpriz Hediye!</title>
+    <style>
+        body { background-color: #000; color: white; text-align: center; font-family: sans-serif; display: flex; flex-direction: column; justify-content: center; height: 100vh; margin: 0; }
+        #scare-ui { display: block; }
+        #jumpscare { display: none; width: 100vw; height: 100vh; object-fit: cover; position: fixed; top: 0; left: 0; }
+        button { padding: 15px 30px; font-size: 20px; cursor: pointer; background: #222; color: #fff; border: 2px solid #fff; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div id="scare-ui">
+        <h1>SESİ FULLE</h1>
+        <br>
+        <button onclick="startPrank()">TIKLA</button>
+    </div>
+
+    <img id="jumpscare" src="Beşar Esad_ “Suriye’yi terk etmek istememiştim”.jpeg" alt="Boo!">
+
+    <audio id="scare-sound" src="Allah,Suri ya Beşşar (Bass Boosted) [-biG4KYQ3gE].mp3"></audio>
+
+    <script>
+        function startPrank() {
+            // Arayüzü gizle
+            document.getElementById('scare-ui').style.display = 'none';
+            
+            // Resmi göster
+            const img = document.getElementById('jumpscare');
+            img.style.display = 'block';
+
+            // Sesi çal (Sesi fullemek için volume 1.0)
+            const audio = document.getElementById('scare-sound');
+            audio.volume = 1.0;
+            audio.play();
+
+            // Tam ekran yapma (isteğe bağlı, daha etkili olur)
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
